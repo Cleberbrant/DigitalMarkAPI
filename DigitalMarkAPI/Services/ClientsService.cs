@@ -20,7 +20,7 @@ namespace DigitalMarkAPI.Services
         {
             try
             {
-                return await _context.Clients.ToListAsync();
+                return await _context.Clients.Include(x => x.Project).ToListAsync();
             }
             catch
             {
